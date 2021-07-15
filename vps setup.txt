@@ -1,0 +1,15 @@
+https://abzohur.com/get-the-cheapest-vps/
+sudo yum update
+==============
+free -m
+===============
+total        used        free      shared  buff/cache   available
+Mem:           7820         112        7643           8          65        7537
+Swap:             0           0           0
+============
+sudo dd if=/dev/zero of=/swap count=4096 bs=1MiB
+=============
+sudo chmod 600 /swap
+============
+sudo mkswap /swap
+===========

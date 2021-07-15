@@ -1,0 +1,41 @@
+http://107.181.136.165/~joincrowd1team/martfury
+================INSTALL Database===========================
+sudo apt-get install mariadb-server
+sudo systemctl status mariadb
+================INSTALL PhpMyAdmin===========================
+sudo apt-get install phpmyadmin
+sudo ln -s /usr/share/phpmyadmin/ /home/pi/server/
+sudo mysql
+CREATE USER 'dhrubo'@'localhost' IDENTIFIED BY 'Dhrubo';
+grant all privileges on * . * to 'dhrubo'@'localhost';
+flush privileges;
+exit;
+//restart your server
+
+================INSTALL NGINX===========================
+sudo apt-get install nginx
+sudo service nginx restart
+================INSTALL APACHE2===========================
+sudo apt-get install apache2
+sudo a2enmod proxy_fcgi setenvif
+sudo systemctl restart apache2
+================UNINSTALL APACHE2===========================
+sudo apt-get purge apache2
+
+================INSTALL PHP===========================
+sudo apt-get install php7.3-fpm
+//After installing php then go to /etc/nginx/sites-enabled/
+//then edit default file
+/*
+server {
+	index index.php index.html index.htm index.nginx-debian.html;
+
+}
+/*
+
+==login==
+mysql -u root -p
+
+================INSTALL FTP Server===========================
+sudo apt-get install proftpd
+
