@@ -22,15 +22,14 @@ sudo systemctl restart apache2
 sudo apt-get purge apache2
 
 ================INSTALL PHP===========================
-sudo apt-get install php7.3-fpm
-//After installing php then go to /etc/nginx/sites-enabled/
-//then edit default file
-/*
-server {
-	index index.php index.html index.htm index.nginx-debian.html;
+sudo apt install php7.4 php7.4-fpm
+sudo /etc/nginx/sites-available/default
+location ~ \.php$ {
+	include snippets/fastcgi-php.conf;
+	fastcgi_pass unix:/var/run/php/php7.3-fpm.sock;
+    }
 
-}
-/*
+
 
 ==login==
 mysql -u root -p
