@@ -11,6 +11,10 @@ flush privileges;
 exit;
 //restart your server
 
+================INSTALL SSL===========================
+sudo apt install certbot
+sudo certbot certonly --webroot -w /home/ubuntu/server/ -d lslc.club
+
 ================INSTALL NGINX===========================
 sudo apt-get install nginx
 sudo service nginx restart
